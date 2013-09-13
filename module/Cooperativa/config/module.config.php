@@ -3,7 +3,16 @@
 return array(
     'router' => array(
         'routes' => array(
-            
+            'home' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/',
+                    'defaults' => array(
+                        'controller' => 'Cooperativa\Controller\AdminController',
+                        'action'     => 'dashboard',
+                    ),
+                ),
+            ),
         ),
     ),
     
@@ -28,6 +37,7 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
+            'Cooperativa\Controller\AdminController' => 'Cooperativa\Controller\AdminController',
         ),
     ),
     'view_manager' => array(
